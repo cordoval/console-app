@@ -2,3 +2,4 @@
 *.phar
 /.bldr/vendor
 /bldr.lock
+/bin
