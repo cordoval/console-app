@@ -1,0 +1,28 @@
+suites:
+    main:
+        namespace: Main
+        spec_path: .
+
+formatter.name: pretty
+stop_on_failure: true
+
+extensions:
+    - Coduo\PhpSpec\Prepare\PrepareExtension
+    - Coduo\PhpSpec\DataProvider\DataProviderExtension
+    - Coduo\PhpSpec\MatcherExtension
+    - Cordoval\BestPractices\PhpSpec\BestPracticesExtension
+    - Cjm\PhpSpec\Extension\TypeHintedMethodsExtension
+    #- PhpSpec\Extension\CodeCoverageExtension
+
+#code_coverage:
+#  whitelist: [lib, src]
+#  blacklist: [test, spec, vendor]
+#  whitelist_files: []
+#  blacklist_files: []
+#  #format:
+#  #  - html
+#  #output:
+#  #  html: coverage
+#  show_uncovered_files: true
+#  lower_upper_bound: 35
+#  high_lower_bound: 70
