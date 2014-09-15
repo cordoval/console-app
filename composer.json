@@ -8,7 +8,11 @@
             "email": "cordoval@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "aura/di": "2.*@dev",
+        "aura/cli": "2.*@dev",
+        "aura/dispatcher": "2.*@dev"
+    },
     "require-dev": {
         "phpspec/phpspec": "~2.1@dev",
         "bossa/phpspec2-expect": "dev-master@dev",
