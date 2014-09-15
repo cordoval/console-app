@@ -1,13 +1,13 @@
 bldr:
     profiles:
-        test:
+        spec:
             description: Profile to run test suite
             tasks:
-                - runTest
-        tdd:
+                - runSpec
+        bdd:
             description: Local Development Profile
             tasks:
-                - testLocal
+                - runSpec
                 - watch
         cs:
             description: fix cs for once

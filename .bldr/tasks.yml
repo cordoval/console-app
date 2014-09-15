@@ -1,37 +1,16 @@
 bldr:
     tasks:
-        test:
-            description: Runs the PHPUnit Tests
+        runSpec:
+            description: Runs the specs
             calls:
                 -
                     type: exec
                     failOnError: true
                     executable: php
                     arguments:
-                        - bin/phpunit
-                        - --config=app
-                        - --exclude-group=skip
-                        - --coverage-text=php://stdout
-        testLocal:
-            description: Runs the PHPUnit Tests
-            calls:
-                -
-                    type: exec
-                    executable: php
-                    failOnError: false
-                    arguments:
-                        - bin/phpunit
-                        - --config=app
-                        - --stop-on-failure
-                        - --exclude-group=skip
-                        #- --group=now
-                -
-                    type: exec
-                    executable: php
-                    failOnError: false
-                    arguments:
                         - bin/phpspec
                         - run
+                        - -f=dot
         watch:
             description: Watch Task for Local Development
             calls:
@@ -39,7 +18,7 @@ bldr:
                     type: watch
                     src:
                         - { path: [src, spec], files: [*.php, *.yml], recursive: true }
-                    task: testLocal
+                    task: runSpec
         runFixer:
             description: Installs if not already and runs php-cs-fixer with custom .php_cs
             calls:

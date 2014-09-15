@@ -22,6 +22,9 @@
     "autoload": {
         "psr-4": { "": "src/" }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "repositories": [
         {
             "type": "vcs",
