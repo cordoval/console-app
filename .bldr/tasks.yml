@@ -24,12 +24,30 @@ bldr:
             calls:
                 -
                     type: exec
+                    executable: unset
+                    arguments:
+                        - SPEC_ENV
+                -
+                    type: exec
                     executable: curl
                     arguments:
                         - http://get.sensiolabs.org/php-cs-fixer.phar
                         - -S
                         - -o
                         - php-cs-fixer.phar
+                -
+                    type: exec
+                    executable: php
+                    arguments:
+                        - php-cs-fixer.phar
+                        - fix
+                        - --config-file=.php_cs
+                -
+                    type: exec
+                    executable: set
+                    arguments:
+                        - SPEC_ENV
+                        - true
                 -
                     type: exec
                     executable: php
