@@ -1,5 +1,6 @@
 <?php
 
+use Aura\Di\ContainerBuilder;
 use Cordoval\Console\Config;
 use Cordoval\Console\Runner;
 
