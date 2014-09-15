@@ -1,7 +1,8 @@
 suites:
     main:
-        namespace: Main
-        spec_path: .
+        namespace: Cordoval\Console\
+        psr4_prefix: Cordoval\Console
+        #spec_path: .
 
 formatter.name: pretty
 stop_on_failure: true
