@@ -1,7 +1,7 @@
 suites:
     main:
-        namespace: Cordoval\Console\
-        psr4_prefix: Cordoval\Console
+        namespace: Cordoval\Console
+        psr4_prefix: Cordoval
         #spec_path: .
 
 formatter.name: pretty
