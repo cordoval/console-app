@@ -21,7 +21,7 @@ final class Runner
 
     public function run()
     {
-        list ($params, $command) = $this->loadContext();
+        list($params, $command) = $this->loadContext();
 
         return (int) $this->dispatcher->__invoke($params, $command);
     }
