@@ -1,0 +1,6 @@
+adapter: github
+issue_tracker: github
+base: master
+table-pr:
+    tests_pass: ['Tests Pass?', yes]
+    fixed_tickets: ['Fixed Tickets', '']

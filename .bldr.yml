@@ -1,0 +1,7 @@
+imports:
+    - { resource: .bldr/profiles.yml }
+    - { resource: .bldr/tasks.yml }
+
+bldr:
+    name: cordoval/console-app
+    description: Decoupled console app

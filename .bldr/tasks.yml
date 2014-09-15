@@ -1,0 +1,73 @@
+bldr:
+    tasks:
+        test:
+            description: Runs the PHPUnit Tests
+            calls:
+                -
+                    type: exec
+                    failOnError: true
+                    executable: php
+                    arguments:
+                        - bin/phpunit
+                        - --config=app
+                        - --exclude-group=skip
+                        - --coverage-text=php://stdout
+        testLocal:
+            description: Runs the PHPUnit Tests
+            calls:
+                -
+                    type: exec
+                    executable: php
+                    failOnError: false
+                    arguments:
+                        - bin/phpunit
+                        - --config=app
+                        - --stop-on-failure
+                        - --exclude-group=skip
+                        #- --group=now
+                -
+                    type: exec
+                    executable: php
+                    failOnError: false
+                    arguments:
+                        - bin/phpspec
+                        - run
+        watch:
+            description: Watch Task for Local Development
+            calls:
+                -
+                    type: watch
+                    src:
+                        - { path: [src, spec], files: [*.php, *.yml], recursive: true }
+                    task: testLocal
+        runFixer:
+            description: Installs if not already and runs php-cs-fixer with custom .php_cs
+            calls:
+                -
+                    type: exec
+                    executable: curl
+                    arguments:
+                        - http://get.sensiolabs.org/php-cs-fixer.phar
+                        - -S
+                        - -o
+                        - php-cs-fixer.phar
+                -
+                    type: exec
+                    executable: php
+                    arguments:
+                        - php-cs-fixer.phar
+                        - fix
+                        - --config-file=.php_cs
+        gushRebase:
+            description: rebase flow
+            calls:
+                -
+                    type: gush:branch:rebase
+                    base_branch: development
+        gushMerge:
+            description: merge flow
+            calls:
+                -
+                    type: gush:pull-request:merge
+                    base_branch: development
+                    symlinked: true

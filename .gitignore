@@ -1,0 +1,4 @@
+/vendor
+*.phar
+/.bldr/vendor
+/bldr.lock

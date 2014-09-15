@@ -1,0 +1,23 @@
+bldr:
+    profiles:
+        test:
+            description: Profile to run test suite
+            tasks:
+                - runTest
+        tdd:
+            description: Local Development Profile
+            tasks:
+                - testLocal
+                - watch
+        cs:
+            description: fix cs for once
+            tasks:
+                - runFixer
+        rebase:
+            description: Rebase flow
+            tasks:
+                - gushRebase
+        merge:
+            description: merge flow
+            tasks:
+                - gushMerge
