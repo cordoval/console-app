@@ -20,7 +20,7 @@
         "cordoval/best-practice-extension": "~1.0@dev"
     },
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-4": { "Cordoval\\": "src/" }
     },
     "config": {
         "bin-dir": "bin"

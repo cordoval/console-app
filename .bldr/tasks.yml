@@ -10,7 +10,7 @@ bldr:
                     arguments:
                         - bin/phpspec
                         - run
-                        - -f=dot
+                        - --format=dot
         watch:
             description: Watch Task for Local Development
             calls:
