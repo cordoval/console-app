@@ -10,6 +10,7 @@ $finder
     ->in(
         [
             __DIR__.'/src/',
+            __DIR__.'/spec/',
         ]
     )
 ;
